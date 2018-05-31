@@ -5,6 +5,9 @@
     <ClCompile Include="pch.cpp">
       <Filter>pch</Filter>
     </ClCompile>
+    <ClCompile Include="SystemClass.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="pch">
@@ -28,6 +31,9 @@
       <Filter>pch</Filter>
     </ClInclude>
     <ClInclude Include="Define.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemClass.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>

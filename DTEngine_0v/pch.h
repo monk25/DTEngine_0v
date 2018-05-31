@@ -12,6 +12,7 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
+#include <random>
 
 #include <stdio.h>
 #include <conio.h>

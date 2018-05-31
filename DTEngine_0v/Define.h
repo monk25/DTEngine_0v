@@ -1,6 +1,10 @@
 #pragma once
 #include "pch.h"
 
+#if defined(DEBUG) | defined(_DEBUG)
+#define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#endif
+
 class Rect :
 	public RECT
 {
@@ -48,12 +52,26 @@ public:
 	}
 };
 
+inline float pita(D3DXVECTOR2 v1, D3DXVECTOR2 v2)
+{
+	return sqrt(pow(v1.x - v2.x, 2) + pow(v1.y - v2.y, 2));
+}
+
+inline float angle(D3DXVECTOR2 v1, D3DXVECTOR2 v2)
+{
+	return atan2(v2.y - v1.y, v2.x - v1.x);
+}
+
 inline int random(int to, int from)
 {
-	
+	static default_random_engine d(timeGetTime());
+	uniform_int_distribution<int> random(from, to);
+	return random(d);
 }
 
 inline float random(float to, float from)
 {
-
+	static default_random_engine d(timeGetTime());
+	uniform_real_distribution<float> random(from, to);
+	return random(d);
 }
