@@ -5,7 +5,13 @@
     <ClCompile Include="pch.cpp">
       <Filter>pch</Filter>
     </ClCompile>
+    <ClCompile Include="Asset.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
     <ClCompile Include="SystemClass.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -33,8 +39,34 @@
     <ClInclude Include="Define.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Asset.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
     <ClInclude Include="SystemClass.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Shader\Color.ps">
+      <Filter>Engine\Shader</Filter>
+    </None>
+    <None Include="..\Shader\Color.vs">
+      <Filter>Engine\Shader</Filter>
+    </None>
+    <None Include="..\Shader\Light.ps">
+      <Filter>Engine\Shader</Filter>
+    </None>
+    <None Include="..\Shader\Light.vs">
+      <Filter>Engine\Shader</Filter>
+    </None>
+    <None Include="..\Shader\Texture.ps">
+      <Filter>Engine\Shader</Filter>
+    </None>
+    <None Include="..\Shader\Texture.vs">
+      <Filter>Engine\Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>

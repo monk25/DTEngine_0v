@@ -14,19 +14,21 @@ public:
 	SystemClass(const SystemClass&);
 	~SystemClass();
 
-	void Run();
+	void run();
 
 	LRESULT CALLBACK MessageHandle(HWND, UINT, WPARAM, LPARAM);
 
 private:
-	bool Frame();
-	void InitializeWindows(int&, int&);
-	void ShutdownWindows();
+	bool frame();
+	void initializeWindows(int&, int&);
+	void shutdownWindows();
+
+public:
+	HWND _hwnd;
 
 private:
 	LPCWSTR _applicationName;
 	HINSTANCE _hinstance;
-	HWND _hwnd;
 	D3DXVECTOR3 worldRotation;
 };
 

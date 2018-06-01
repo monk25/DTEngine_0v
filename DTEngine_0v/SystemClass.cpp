@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "SystemClass.h"
+#include "World.h"
 
 
 SystemClass::SystemClass() : worldRotation(0.0f, 0.0f, 0.0f)
@@ -10,7 +11,8 @@ SystemClass::SystemClass() : worldRotation(0.0f, 0.0f, 0.0f)
 	screenWidth = 0;
 	screenHeight = 0;
 
-	InitializeWindows(screenWidth, screenHeight);
+	initializeWindows(screenWidth, screenHeight);
+	world.initialize();
 }
 
 SystemClass::SystemClass(const SystemClass& other)
@@ -19,10 +21,11 @@ SystemClass::SystemClass(const SystemClass& other)
 
 SystemClass::~SystemClass()
 {
-	ShutdownWindows();
+	world.dispose();
+	shutdownWindows();
 }
 
-void SystemClass::Run()
+void SystemClass::run()
 {
 	MSG msg;
 	bool done, result;
@@ -40,7 +43,7 @@ void SystemClass::Run()
 			done = true;
 		}
 		else {
-			result = Frame();
+			result = frame();
 			if (!result) {
 				MessageBox(_hwnd, L"Frame Processing Failed", L"Error", MB_OK);
 				done = true;
@@ -49,14 +52,14 @@ void SystemClass::Run()
 	}
 }
 
-bool SystemClass::Frame()
+bool SystemClass::frame()
 {
 	bool result;
 
 	return true;
 }
 
-void SystemClass::InitializeWindows(int& screenWidth, int& screenHeight)
+void SystemClass::initializeWindows(int& screenWidth, int& screenHeight)
 {
 	WNDCLASSEX wc;
 	DEVMODE dmScreenSettings;
@@ -116,7 +119,7 @@ void SystemClass::InitializeWindows(int& screenWidth, int& screenHeight)
 	return;
 }
 
-void SystemClass::ShutdownWindows()
+void SystemClass::shutdownWindows()
 {
 	ShowCursor(true);
 

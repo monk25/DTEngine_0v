@@ -14,8 +14,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pScmdling,
 	if (!System) {
 		return 0;
 	}
-	cout << "Â¥¸´ÇØ~" << endl;
-	System->Run();
+
+	System->run();
 
 	delete System;
 
