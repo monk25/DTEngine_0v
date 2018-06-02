@@ -12,7 +12,7 @@ SystemClass::SystemClass() : worldRotation(0.0f, 0.0f, 0.0f)
 	screenHeight = 0;
 
 	initializeWindows(screenWidth, screenHeight);
-	world.initialize();
+	world.initialize(screenWidth, screenHeight);
 }
 
 SystemClass::SystemClass(const SystemClass& other)

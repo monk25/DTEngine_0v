@@ -38,5 +38,3 @@ public:
 	D3DXMATRIX _worldMatrix;
 	D3DXMATRIX _orthoMatrix;
 };
-
-extern D3DClass d3d;

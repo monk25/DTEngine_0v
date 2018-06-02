@@ -2,9 +2,10 @@
 #include "World.h"
 #include "Asset.h"
 #include "SystemClass.h"
+#include "TextureShaderClass.h"
 
 
-World::World()
+World::World() : _d3d(nullptr), _textureShader(nullptr)
 {
 }
 
@@ -14,7 +15,7 @@ World::~World()
 }
 
 
-void World::initialize()
+void World::initialize(int screenWidth, int screenHeight)
 {
 	asset.initialize();
 	cout.precision(3);
@@ -23,6 +24,8 @@ void World::initialize()
 	startClock = clock();
 	currentClock = clock();
 	lastClock = clock();
+	_d3d = new D3DClass(screenWidth, screenHeight, applicationHandle->_hwnd);
+	_textureShader = new TextureShaderClass(_d3d->_device, applicationHandle->_hwnd);
 }
 
 void World::dispose()
@@ -32,7 +35,9 @@ void World::dispose()
 
 void World::render()
 {
+	D3DXMATRIX worldMatrix, viewMatrix, projectionMatrix, orthoMatrix;
 
+	_d3d->begineScene(0.0f, 0.0f, 0.0f, 1.0f);
 }
 
 void World::update(float dt)

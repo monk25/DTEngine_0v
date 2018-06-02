@@ -285,5 +285,3 @@ void D3DClass::turnZBufferOff()
 {
 	_deviceContext->OMSetDepthStencilState(_depthDisabledStencilState, 1);
 }
-
-D3DClass d3d;

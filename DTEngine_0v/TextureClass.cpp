@@ -6,6 +6,9 @@ TextureClass::TextureClass() : _texture(nullptr)
 {
 }
 
+TextureClass::TextureClass(const TextureClass& other)
+{
+}
 
 TextureClass::~TextureClass()
 {
