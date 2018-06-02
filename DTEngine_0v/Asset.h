@@ -1,5 +1,6 @@
 #pragma once
 #include "Define.h"
+#include "TextureClass.h"
 
 class Asset
 {
@@ -12,7 +13,9 @@ public:
 	void ready(string rootFilePath);
 	void loadNext();
 
-	map<string, int> textures;
+	TextureClass* getTexture(wstring p);
+
+	map<wstring, TextureClass*> textures;
 
 	vector<string> paths;
 	vector<string>::iterator pathIter;

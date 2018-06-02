@@ -5,6 +5,11 @@
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #endif
 
+const bool FULL_SCREEN = false;
+const bool VSYNC_ENABLE = true;
+const float SCREEN_DEPTH = 1000.0f;
+const float SCREEN_NEAR = 0.1f;
+
 class Rect :
 	public RECT
 {
