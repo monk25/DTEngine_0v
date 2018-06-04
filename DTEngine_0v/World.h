@@ -2,6 +2,7 @@
 #include "Define.h"
 #include "D3DClass.h"
 
+class Timer;
 class TextureShaderClass;
 class LightShaderClass;
 
@@ -28,6 +29,7 @@ public:
 	clock_t lastClock;
 	double dt;
 
+	vector<Timer*> timers;
 	D3DClass* _d3d;
 	TextureShaderClass* _textureShader;
 };

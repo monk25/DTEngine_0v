@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "World.h"
 #include "Asset.h"
+#include "Timer.h"
 #include "SystemClass.h"
 #include "TextureShaderClass.h"
 
@@ -53,6 +54,9 @@ void World::update(float dt)
 
 	GetCursorPos(&mousePos);
 	ScreenToClient(applicationHandle->_hwnd, &mousePos);
+
+	for (auto* timer : timers)
+		timer->update(dt);
 }
 
 int World::getKeyState(int vk)
