@@ -35,7 +35,12 @@
     <ClCompile Include="Timer.cpp">
       <Filter>Engine\Utility\Timer</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Scene.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Engine\Sprite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -95,6 +100,9 @@
     <Filter Include="Engine\Utility\Timer">
       <UniqueIdentifier>{7eaa8745-b79d-44b2-b230-81a340b5b5ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Utility\Singleton">
+      <UniqueIdentifier>{e921c8a6-ed3b-44c1-ba16-54a565ccac16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -133,7 +141,12 @@
     <ClInclude Include="Timer.h">
       <Filter>Engine\Utility\Timer</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Scene.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Engine\Sprite</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shader\Color.ps">
