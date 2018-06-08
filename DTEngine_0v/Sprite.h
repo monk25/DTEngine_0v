@@ -1,6 +1,6 @@
 #pragma once
 #include "Entity.h"
-#include "TextureClass.h"
+#include "BitmapClass.h"
 
 class Sprite :
 	public Entity
@@ -14,7 +14,7 @@ public:
 	void setPath(wstring path);
 	void render();
 
-	TextureClass* texture;
+	BitmapClass* bitmap;
 	D3DXCOLOR color;
 };
 

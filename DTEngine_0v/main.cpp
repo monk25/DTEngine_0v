@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "SystemClass.h"
+#include "World.h"
 
 #if defined(DEBUG) | defined(_DEBUG)
 int main()
@@ -10,7 +11,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pScmdling,
 	SystemClass* System;
 	bool result;
 
-	System = new SystemClass;
+	System = new SystemClass();
+	world.initialize(800, 600);
 	if (!System) {
 		return 0;
 	}

@@ -1,9 +1,8 @@
 #include "pch.h"
 #include "Scene.h"
-#include "CameraClass.h"
 
-
-Scene::Scene() : followTarget(nullptr), _camera(nullptr)
+Scene::Scene() : followTarget(nullptr), _camera
+(nullptr)
 {
 	_camera = new CameraClass();
 }
@@ -47,7 +46,7 @@ void Scene::shake(int cnt, float range, float duration)
 {
 	shakeTimer.reset(duration, cnt);
 	shakeTimer.onTick = [=]() {
-		_camera->_positionX += random(-range, range);
-		_camera->_positionY += random(-range, range);
+		//_camera->_positionX += random(-range, range);
+		//_camera->_positionY += random(-range, range);
 	};
 }

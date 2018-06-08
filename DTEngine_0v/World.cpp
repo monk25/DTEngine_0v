@@ -6,7 +6,7 @@
 #include "TextureShaderClass.h"
 
 
-World::World() : _d3d(nullptr), _textureShader(nullptr)
+World::World() : _d3d(nullptr), _textureShader(nullptr), currentScene(nullptr)
 {
 }
 
@@ -36,9 +36,22 @@ void World::dispose()
 
 void World::render()
 {
+	if (!currentScene) return;
 	D3DXMATRIX worldMatrix, viewMatrix, projectionMatrix, orthoMatrix;
 
 	_d3d->begineScene(0.0f, 0.0f, 0.0f, 1.0f);
+
+	currentScene->_camera->render();
+
+	viewMatrix = currentScene->_camera->_viewMatrix;
+	worldMatrix = _d3d->_worldMatrix;
+	projectionMatrix = _d3d->_projectionMatrix;
+	orthoMatrix = _d3d->_orthoMatrix;
+
+	_d3d->turnZBufferOff();
+	currentScene->render();
+	_d3d->turnZBufferOn();
+	_d3d->endScene();
 }
 
 void World::update(float dt)
@@ -57,6 +70,14 @@ void World::update(float dt)
 
 	for (auto* timer : timers)
 		timer->update(dt);
+
+	if (currentScene) currentScene->update(dt);
+}
+
+void World::changeScene(Scene* scene)
+{
+	if (currentScene) delete currentScene;
+	currentScene = scene;
 }
 
 int World::getKeyState(int vk)

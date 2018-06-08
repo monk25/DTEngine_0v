@@ -1,10 +1,9 @@
 #pragma once
 #include "Define.h"
 #include "D3DClass.h"
-
-class Timer;
-class TextureShaderClass;
-class LightShaderClass;
+#include "Scene.h"
+#include "Timer.h"
+#include "TextureShaderClass.h"
 
 class World
 {
@@ -17,9 +16,11 @@ public:
 
 	void render();
 	void update(float dt);
+	void changeScene(Scene* scene);
 	int getKeyState(int vk);
 	D3DXVECTOR2 getMousePos();
 
+	Scene* currentScene;
 	bool currentKeys[256];
 	bool lastKeys[256];
 	POINT mousePos;

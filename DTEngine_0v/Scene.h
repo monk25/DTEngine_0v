@@ -1,8 +1,7 @@
 #pragma once
 #include "Entity.h"
 #include "Timer.h"
-
-class CameraClass;
+#include "CameraClass.h"
 
 class Scene :
 	public Entity
