@@ -5,6 +5,9 @@
 
 SystemClass::SystemClass() : worldRotation(0.0f, 0.0f, 0.0f)
 {
+	if (applicationHandle == nullptr)
+		applicationHandle = this;
+
 	int screenWidth, screenHeight;
 	bool result;
 
