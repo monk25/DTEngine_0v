@@ -8,7 +8,7 @@ public:
 	SystemClass();
 	SystemClass(const SystemClass&);
 	~SystemClass();
-
+	static SystemClass* applicationHandle;
 	void run();
 
 	LRESULT CALLBACK MessageHandle(HWND, UINT, WPARAM, LPARAM);
@@ -28,4 +28,3 @@ private:
 };
 
 static LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-static SystemClass* applicationHandle = nullptr;
