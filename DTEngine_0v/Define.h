@@ -67,14 +67,14 @@ inline float angle(D3DXVECTOR2 v1, D3DXVECTOR2 v2)
 	return atan2(v2.y - v1.y, v2.x - v1.x);
 }
 
-inline int random(int to, int from)
+inline int random(int from, int to)
 {
 	static default_random_engine d(timeGetTime());
 	uniform_int_distribution<int> random(from, to);
 	return random(d);
 }
 
-inline float random(float to, float from)
+inline float random(float from, float to)
 {
 	static default_random_engine d(timeGetTime());
 	uniform_real_distribution<float> random(from, to);
